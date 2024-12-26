@@ -8,7 +8,6 @@ import static step1.miot2j.calculator.view.Output.outputStartMessage;
 import static step1.miot2j.calculator.view.Output.resultOutput;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -32,7 +31,8 @@ public class Calculator {
         String enteredMathExpression = inputMathExpression();
         validate(enteredMathExpression);
         String[] slicedMathExpression = sliceMathExpression(enteredMathExpression);
-        List<String> slicedMathExpressionList = convertSplitExpressionArrayToList(slicedMathExpression);
+        List<String> slicedMathExpressionList = convertSplitExpressionArrayToList(
+            slicedMathExpression);
         return slicedMathExpressionList;
     }
 
