@@ -1,8 +1,8 @@
 package step1.miot2j.calculator;
 
-import java.util.Arrays;
-
 import static step1.miot2j.calculator.ExceptionMessage.IS_NOT_MATH_EXPRESSION_MESSAGE;
+
+import java.util.Arrays;
 
 public enum MathSymbol {
     PLUS("+"),
@@ -16,15 +16,15 @@ public enum MathSymbol {
         this.mathSymbol = mathSymbol;
     }
 
-    public String getMathSymbol() {
-        return mathSymbol;
-    }
-
     public static MathSymbol findValidatedSymbol(String operator) {
         return Arrays.stream(MathSymbol.values())
             .filter(v -> v.getMathSymbol().equals(operator))
             .findAny()
             .orElseThrow(() -> new IllegalArgumentException(String.format("잘못 된 연산자입니다.")));
+    }
+
+    public String getMathSymbol() {
+        return mathSymbol;
     }
 
     public double operate(double firstNumber, double secondNumber) {
